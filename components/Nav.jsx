@@ -13,7 +13,7 @@ const Nav = () => {
 
   useEffect(() => {
     const setProviders = async () => {
-      // const response = await getProviders();
+      const response = await getProviders();
 
       setProviders(response);
     };
@@ -93,6 +93,18 @@ const Nav = () => {
                   >
                     My Profile
                   </Link>
+                  <Link href={"/create-prompt"}
+                  className="dropdown_link"
+                  onClick={() => setToggleDropdown(false)}
+                  >
+                    Create prompt
+                  </Link>
+                  <button className="mt-5 w-full black_btn" type="button" onClick={() => {
+                    setToggleDropdown(false)
+                    signOut();
+                    }}>
+                    Sign Out
+                  </button>
                 </div>
               )
             }
